@@ -263,8 +263,10 @@ export class Scraper {
   }
 
   /**
-   * Fetch the tweets a user has liked
-   * @param userId The user whose liked tweets should be returned
+   * Fetch liked tweets for the authenticated user.
+   * Note: This endpoint only returns results for your own account.
+   * Querying another user's ID will fail or return empty.
+   * @param userId Your own user ID (or the target user's screen name resolved to ID)
    * @param maxTweets The maximum number of tweets to return.
    * @param cursor The search cursor, which can be passed into further requests for more results.
    * @returns A page of results, containing a cursor that can be used in further requests.
